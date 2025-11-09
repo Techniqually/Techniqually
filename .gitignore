@@ -1,0 +1,21 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.log
+
+# Build artifacts (if using a build process like Sass compilation)
+/assets/css/*.map
+/dist/ # If you compile to a 'dist' directory
+
+# Sensitive information (if applicable)
+.env
+assets/config.js # Or any other file containing sensitive configuration

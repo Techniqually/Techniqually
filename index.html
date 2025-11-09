@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniqually - Digital Marketing & Marketing Automation Agency</title>
+    <meta name="description" content="Transform your digital presence with Techniqually. Expert digital marketing, marketing automation, and data-driven strategies for modern businesses.">
+    <meta name="keywords" content="digital marketing, marketing automation, SEO, social media, data analytics, CRM, Singapore">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?v=3.4.0"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-subtle': 'bounceSubtle 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceSubtle: {
+                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+                            '40%': { transform: 'translateY(-10px)' },
+                            '60%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=1.0">
+</head>
+<body class="font-sans bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-white transition-colors">
+                        Techniqually
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="navbar-link text-white hover:text-primary-300 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="navbar-link text-white hover:text-primary-300 px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#expertise" class="navbar-link text-white hover:text-primary-300 px-3 py-2 text-sm font-medium transition-colors">AI Expertise</a>
+                        <a href="#about" class="navbar-link text-white hover:text-primary-300 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#portfolio" class="navbar-link text-white hover:text-primary-300 px-3 py-2 text-sm font-medium transition-colors">Portfolio</a>
+                        <a href="#contact" class="navbar-link text-white hover:text-primary-300 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="navbar-link text-white hover:text-primary-300 p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors">Services</a>
+                <a href="#expertise" class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors">AI Expertise</a>
+                <a href="#about" class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors">About</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors">Portfolio</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Modern Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-slate-900"></div>
+
+        <!-- Subtle Mesh Overlay -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        </div>
+
+        <!-- Accent Elements -->
+        <div class="absolute top-1/4 right-10 w-32 h-32 bg-gradient-to-br from-primary-500/10 to-primary-600/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 left-10 w-24 h-24 bg-gradient-to-br from-primary-400/8 to-primary-500/3 rounded-full blur-2xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    Redefining Digital
+                    <span class="text-primary-300">Marketing</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Transform your brand with data-driven strategies, cutting-edge marketing automation,
+                    and innovative digital experiences that drive real results.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#services" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        Explore Our Services
+                    </a>
+                    <a href="#expertise" class="border-2 border-white/80 text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                        Our AI Expertise
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive digital marketing solutions designed to accelerate your business growth
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Cards -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 hover:border-primary-200 group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors duration-300">
+                        <i class="fas fa-chart-line text-2xl text-primary-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Data & Analytics</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Transform raw data into actionable insights. We implement advanced measurement frameworks
+                        that optimize conversion rates and maximize your business goals.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 hover:border-primary-200 group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors duration-300">
+                        <i class="fas fa-robot text-2xl text-primary-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Marketing Automation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Streamline your marketing processes with intelligent automation. Create personalized
+                        customer journeys that convert leads into loyal customers.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 hover:border-primary-200 group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors duration-300">
+                        <i class="fas fa-users text-2xl text-primary-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">CRM & Email Automation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Engage your audience effectively with sophisticated CRM and email marketing strategies.
+                        We specialize in Salesforce Marketing Cloud and other leading platforms.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 hover:border-primary-200 group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors duration-300">
+                        <i class="fas fa-search text-2xl text-primary-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">SEO Optimization</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Dominate search engine results with our comprehensive SEO strategies.
+                        From technical optimization to content marketing, we drive organic growth.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 hover:border-primary-200 group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors duration-300">
+                        <i class="fas fa-share-alt text-2xl text-primary-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Social Media Management</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Build authentic connections with your audience across all social platforms.
+                        Strategic content, community management, and paid advertising that delivers ROI.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 hover:border-primary-200 group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-600 transition-colors duration-300">
+                        <i class="fas fa-code text-2xl text-primary-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Web Development</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Modern, responsive websites that convert visitors into customers.
+                        From landing pages to complex web applications, we build digital experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==========================
+      Areas of Expertise Section
+    ============================-->
+    <section id="expertise" class="py-20 bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our AI Expertise</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Pioneering the future of digital experiences with cutting-edge AI technology
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- AI Capabilities -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary-300">Generative AI & Machine Learning</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-brain text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">AI-Powered Interfaces</h4>
+                                <p class="text-gray-300">Building intuitive conversational interfaces using advanced language models and external APIs for seamless user experiences.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-robot text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Intelligent Automation</h4>
+                                <p class="text-gray-300">Developing smart automation systems that learn from user behavior and adapt to deliver personalized experiences.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-chart-network text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Data-Driven Insights</h4>
+                                <p class="text-gray-300">Leveraging machine learning algorithms to extract valuable insights from complex datasets and drive strategic decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Tech Stack -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-2xl font-bold mb-6 text-primary-300">Technology Stack</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fab fa-python text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold">Python</h4>
+                            <p class="text-sm text-gray-400">AI/ML Development</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-code text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold">TensorFlow</h4>
+                            <p class="text-sm text-gray-400">Neural Networks</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fab fa-react text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold">React</h4>
+                            <p class="text-sm text-gray-400">AI Interfaces</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-cloud text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold">Cloud AI</h4>
+                            <p class="text-sm text-gray-400">External APIs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Project Showcase -->
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <h3 class="text-2xl font-bold mb-8 text-center text-primary-300">Featured AI Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white/10 rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-3">Conversational AI Chatbots</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Intelligent chatbots powered by GPT models for customer service automation and personalized interactions.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-image text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-3">AI Content Generation</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Automated content creation using DALL-E and other generative AI models for marketing materials and creative assets.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-3">Predictive Analytics</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Machine learning models for customer behavior prediction and automated decision-making systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-flex items-center">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Start Your AI Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Techniqually</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        We're a digital-first agency that transforms brands through innovative marketing strategies,
+                        cutting-edge technology, and data-driven insights. Our mission is to help businesses thrive
+                        in the digital age by creating meaningful connections between brands and their audiences.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        With expertise across marketing automation, data analytics, and digital strategy,
+                        we deliver solutions that not only look great but drive measurable business results.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">50+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">98%</div>
+                            <div class="text-gray-600">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">24/7</div>
+                            <div class="text-gray-600">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="aspect-square bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl p-8 text-white">
+                        <div class="h-full flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-4">Our Approach</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-3"></i>
+                                    <span>Data-driven decision making</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-3"></i>
+                                    <span>Customer-centric strategies</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-3"></i>
+                                    <span>Continuous innovation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-3"></i>
+                                    <span>Measurable results focus</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Showcasing our expertise across web development, mobile apps, and digital marketing campaigns
+                </p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-mobile-alt text-4xl mb-2"></i>
+                            <h3 class="text-xl font-semibold">Mobile App Development</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-xl font-semibold mb-2">E-commerce App</h4>
+                            <p class="text-sm">React Native • Node.js • MongoDB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-globe text-4xl mb-2"></i>
+                            <h3 class="text-xl font-semibold">Web Development</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-xl font-semibold mb-2">Corporate Website</h4>
+                            <p class="text-sm">React • Tailwind CSS • SEO Optimized</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-envelope text-4xl mb-2"></i>
+                            <h3 class="text-xl font-semibold">Email Marketing</h3>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-xl font-semibold mb-2">Campaign Automation</h4>
+                            <p class="text-sm">SFMC • Dynamic Content • A/B Testing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Don't just take our word for it - hear from the businesses we've helped transform
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Techniqually transformed our digital presence completely. Their marketing automation
+                        strategies increased our lead conversion by 300% in just 6 months."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 font-semibold">SM</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Sarah Mitchell</div>
+                            <div class="text-gray-600 text-sm">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "The team's expertise in data analytics and SEO helped us dominate our niche market.
+                        Our organic traffic increased by 400% within a year."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 font-semibold">JD</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">James Davis</div>
+                            <div class="text-gray-600 text-sm">Marketing Director, GrowthCo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Outstanding web development and ongoing support. Our new website not only looks
+                        amazing but also performs exceptionally well across all devices."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-600 font-semibold">LC</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Lisa Chen</div>
+                            <div class="text-gray-600 text-sm">Founder, Creative Solutions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Transform Your Digital Presence?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                    Let's discuss how we can help your business achieve extraordinary results in the digital world
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:info@techniqually.com" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get In Touch
+                    </a>
+                    <a href="tel:+6598806704" class="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 inline-flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        Call Us Now
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Visit Us</h3>
+                    <p class="text-gray-600">
+                        312A Anchorvale Lane<br>
+                        #16-50, Singapore 541312
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
+                    <p class="text-gray-600">
+                        <a href="tel:+6598806704" class="hover:text-primary-600 transition-colors">+65 9880 6704</a>
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
+                    <p class="text-gray-600">
+                        <a href="mailto:info@techniqually.com" class="hover:text-primary-600 transition-colors">info@techniqually.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="text-center mt-12">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">Follow Us</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://twitter.com/techniqually" target="_blank" class="w-12 h-12 bg-primary-100 hover:bg-primary-600 text-primary-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/techniqually" target="_blank" class="w-12 h-12 bg-primary-100 hover:bg-primary-600 text-primary-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/techniqually/" target="_blank" class="w-12 h-12 bg-primary-100 hover:bg-primary-600 text-primary-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCGA_iI5oVhBDn9-x2hQ9kAQ" target="_blank" class="w-12 h-12 bg-primary-100 hover:bg-primary-600 text-primary-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/techniqually" target="_blank" class="w-12 h-12 bg-primary-100 hover:bg-primary-600 text-primary-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-primary-400 mb-4">Techniqually</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Redefining digital marketing through innovation, data-driven strategies,
+                        and cutting-edge marketing automation solutions. Your success in the digital age starts here.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/techniqually" target="_blank" class="text-gray-400 hover:text-primary-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/techniqually" target="_blank" class="text-gray-400 hover:text-primary-400 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/techniqually/" target="_blank" class="text-gray-400 hover:text-primary-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCGA_iI5oVhBDn9-x2hQ9kAQ" target="_blank" class="text-gray-400 hover:text-primary-400 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-primary-400 transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-primary-400 transition-colors">Services</a></li>
+                        <li><a href="#expertise" class="text-gray-300 hover:text-primary-400 transition-colors">AI Expertise</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-primary-400 transition-colors">About</a></li>
+                        <li><a href="#portfolio" class="text-gray-300 hover:text-primary-400 transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-primary-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <p>
+                            <i class="fas fa-map-marker-alt mr-2 text-primary-400"></i>
+                            312A Anchorvale Lane<br>
+                            #16-50, Singapore 541312
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-2 text-primary-400"></i>
+                            <a href="tel:+6598806704" class="hover:text-primary-400 transition-colors">+65 9880 6704</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope mr-2 text-primary-400"></i>
+                            <a href="mailto:info@techniqually.com" class="hover:text-primary-400 transition-colors">info@techniqually.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Techniqually. All rights reserved. | Crafting Digital Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js?v=1.0"></script>
+</body>
+</html>
+
