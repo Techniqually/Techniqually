@@ -1,16 +1,21 @@
 // Techniqually - Main JavaScript
-// Modern vanilla JavaScript for smooth interactions and animations
+// Vanilla JS for navigation, scroll animations, and the mobile menu
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
     initNavigation();
-    initSmoothScrolling();
     initScrollAnimations();
     initMobileMenu();
     initNavbarScroll();
+    initHeroParallax();
+
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+        }, 100);
+    });
 });
 
-// Navigation functionality
+// Smooth-scroll anchor navigation
 function initNavigation() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -29,16 +34,10 @@ function initNavigation() {
                     behavior: 'smooth'
                 });
 
-                // Close mobile menu if open
                 closeMobileMenu();
             }
         });
     });
-}
-
-// Smooth scrolling for anchor links
-function initSmoothScrolling() {
-    // Additional smooth scrolling setup if needed
 }
 
 // Scroll animations using Intersection Observer
@@ -56,8 +55,7 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements that should animate on scroll
-    const animateElements = document.querySelectorAll('.grid > div, .space-y-3 > li, .aspect-video');
+    const animateElements = document.querySelectorAll('.grid > div, .space-y-4 > li');
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -85,60 +83,40 @@ function closeMobileMenu() {
     }
 }
 
-// Navbar scroll effect
+// Add a background/border once the page is scrolled past the hero
 function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
-    let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Add background when scrolled past hero section
         if (scrollTop > 100) {
-            navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'border-b', 'border-gray-100');
-            // Change text to dark when background is white
-            document.querySelectorAll('.navbar-link').forEach(link => {
-                link.classList.remove('text-white', 'hover:text-primary-300');
-                link.classList.add('text-gray-700', 'hover:text-primary-600');
-            });
-            // Change logo color
-            const logo = navbar.querySelector('a[href="#home"]');
-            if (logo) {
-                logo.classList.remove('text-white');
-                logo.classList.add('text-primary-600', 'hover:text-primary-700');
-            }
-            // Change mobile menu button color
-            const mobileBtn = document.getElementById('mobile-menu-button');
-            if (mobileBtn) {
-                mobileBtn.classList.remove('text-white', 'hover:text-primary-300');
-                mobileBtn.classList.add('text-gray-700', 'hover:text-primary-600');
-            }
+            navbar.classList.add('bg-bg/95', 'backdrop-blur-sm', 'border-border');
         } else {
-            navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'border-b', 'border-gray-100');
-            // Change text back to white when background is transparent
-            document.querySelectorAll('.navbar-link').forEach(link => {
-                link.classList.remove('text-gray-700', 'hover:text-primary-600');
-                link.classList.add('text-white', 'hover:text-primary-300');
-            });
-            // Change logo color back
-            const logo = navbar.querySelector('a[href="#home"]');
-            if (logo) {
-                logo.classList.remove('text-primary-600', 'hover:text-primary-700');
-                logo.classList.add('text-white');
-            }
-            // Change mobile menu button color back
-            const mobileBtn = document.getElementById('mobile-menu-button');
-            if (mobileBtn) {
-                mobileBtn.classList.remove('text-gray-700', 'hover:text-primary-600');
-                mobileBtn.classList.add('text-white', 'hover:text-primary-300');
-            }
+            navbar.classList.remove('bg-bg/95', 'backdrop-blur-sm', 'border-border');
         }
-
-        lastScrollTop = scrollTop;
     });
 }
 
-// Utility functions
+// Subtle parallax on the hero content
+function initHeroParallax() {
+    const hero = document.getElementById('home');
+    const heroContent = hero && hero.querySelector('.relative.z-10');
+    if (!heroContent) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const rate = window.pageYOffset * -0.5;
+            heroContent.style.transform = `translateY(${rate * 0.1}px)`;
+            ticking = false;
+        });
+    });
+}
+
+// Utility
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -151,73 +129,9 @@ function debounce(func, wait) {
     };
 }
 
-// Add loading animation for portfolio items
-function initPortfolioHover() {
-    const portfolioItems = document.querySelectorAll('.group.relative');
-
-    portfolioItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            const overlay = this.querySelector('.absolute.inset-0');
-            if (overlay) {
-                overlay.style.transition = 'all 0.3s ease';
-            }
-        });
-    });
-}
-
-// Performance optimization - lazy load images if needed
-function initLazyLoading() {
-    // Could implement lazy loading for images here if needed
-    // For now, all images are loaded immediately for better UX
-}
-
-// Initialize additional features when window loads
-window.addEventListener('load', function() {
-    initPortfolioHover();
-    initLazyLoading();
-
-    // Add a small delay to ensure everything is loaded
-    setTimeout(() => {
-        document.body.classList.add('loaded');
-    }, 100);
-});
-
-// Handle resize events for responsive adjustments
+// Close mobile menu on resize back to desktop widths
 window.addEventListener('resize', debounce(function() {
-    // Close mobile menu on resize if screen becomes larger
     if (window.innerWidth >= 768) {
         closeMobileMenu();
     }
 }, 250));
-
-// Add CSS for the slide-up animation
-const style = document.createElement('style');
-style.textContent = `
-    .animate-slide-up {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-
-    body.loaded .animate-fade-in {
-        animation: fadeIn 0.8s ease-out forwards;
-    }
-`;
-document.head.appendChild(style);
-
-// Add some modern touches
-document.addEventListener('DOMContentLoaded', function() {
-    // Add subtle parallax effect to hero section
-    const hero = document.getElementById('home');
-
-    if (hero) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-
-            if (hero.querySelector('.relative.z-10')) {
-                hero.querySelector('.relative.z-10').style.transform = `translateY(${rate * 0.1}px)`;
-            }
-        });
-    }
-});
-

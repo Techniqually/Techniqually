@@ -1,0 +1,13 @@
+{
+  "name": "techniqually-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Techniqually company website",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/main.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

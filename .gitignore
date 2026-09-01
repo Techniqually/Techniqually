@@ -12,10 +12,10 @@ Thumbs.db
 *.tmp
 *.log
 
-# Build artifacts (if using a build process like Sass compilation)
-/assets/css/*.map
-/dist/ # If you compile to a 'dist' directory
+# Node / build
+node_modules/
+assets/css/main.css
+assets/css/*.map
 
-# Sensitive information (if applicable)
+# Sensitive information
 .env
-assets/config.js # Or any other file containing sensitive configuration
